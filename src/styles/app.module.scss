@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import './variables';
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+.app{
+  width: 100vw;
+  height: 100vh;
+  background-color: $dark-background;
+  display: flex;
+  justify-content: center;
+  transition: .15s background-color ease-in;
+}
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+}
+.calc{
+  display: block;
+}
+.light{
+  background-color:$light;
+}

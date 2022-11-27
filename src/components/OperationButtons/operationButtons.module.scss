@@ -1,0 +1,7 @@
+.operation__buttons{
+    display: grid;
+    grid-template-columns:repeat(3,50px);
+    grid-gap:20px 25px;
+    grid-row-start: 1;
+
+}

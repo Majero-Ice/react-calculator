@@ -1,0 +1,14 @@
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  align-items: center;
+  top: 0;
+  width: 100%;
+  max-width: 800px;
+  height: 80px;
+}
+.navbar img{
+  width: 25px;
+  height: 25px;
+}

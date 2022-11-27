@@ -1,0 +1,22 @@
+@import '../../styles/variables';
+
+.screen{
+   background-color: $dark-screen;
+   display: flex;
+   justify-content: space-between;
+   border-radius: 10px;
+   height: 60px;
+   padding: 20px;
+   color: $light;
+   transition: .15s background-color ease-in;
+}
+
+.fast__calculation{
+   color: $fast-calculation;
+   font-size: 14px;
+}
+.light{
+   background-color: $light;
+   border: $light-screen-border solid 1px;
+   color: $dark;
+}
