@@ -23,7 +23,7 @@ const Numpad:FC<NumpadProps> = ({theme}) => {
         if (isNum(button ?? '')){
 
             calculation.addNum(button ?? '')
-        }else if (screen.length || button === '-'){
+        }else if ((screen !== '-' && screen.length) || button === '-'){
 
             calculation.addOperation(button ?? '')
         }
@@ -32,7 +32,7 @@ const Numpad:FC<NumpadProps> = ({theme}) => {
     return (
         <div className={styles.numpad}>
             <OperationButtons calculation={calculation} theme={theme} addToScreen={addToScreen}/>
-            <NumButtons calculation={calculation} theme={theme} moreFunc={true}  addToScreen={addToScreen}/>
+            <NumButtons theme={theme} moreFunc={true}  addToScreen={addToScreen}/>
             <NumOperationButtons addToScreen={addToScreen} calculation={calculation}/>
         </div>
     );
