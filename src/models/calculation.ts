@@ -67,7 +67,7 @@ export class Calculation{
                 }
                 
 
-                this.prevNum && (getLastOperation() === '+' )
+                this.prevNum && (getLastOperation() === '+' || getLastOperation() === '-' )
                     ? result = String( Number(this.currentNum) / 100 * Number(this.prevNum))
                     : result = String(+this.currentNum / 100)
                     console.log(result)
