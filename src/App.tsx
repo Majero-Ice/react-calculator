@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import Screen from "./components/Screen/Screen";
 import Numpad from "./components/Numpad/Numpad";
 import Navbar from "./components/Navbar/Navbar";
@@ -14,7 +14,7 @@ const App = () => {
                 <Navbar setTheme={setDarkTheme} theme={darkTheme}/>
                 <div className={styles.calc}>
                     <Screen theme={darkTheme}/>
-                    <Numpad  theme={darkTheme} />
+                    <Numpad theme={darkTheme} />
                 </div>
             </div>
         </div>

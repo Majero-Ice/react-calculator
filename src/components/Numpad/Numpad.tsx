@@ -1,4 +1,4 @@
-import React, {FC, MouseEvent,useState} from 'react';
+import {FC, MouseEvent,useState} from 'react';
 import styles from './numpad.module.scss'
 import {isNum} from "../../utils";
 import {Calculation} from "../../models/calculation";

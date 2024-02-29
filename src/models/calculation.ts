@@ -1,15 +1,18 @@
-import {AppDispatch} from "../store";
+import {AppDispatch, store} from "../store";
 import {getPercent,addNum,addOperation,getResult,clearScreen,removeLast} from "../store/reducers/screenReducer";
+import { getLastOperation, isNum } from "../utils";
 
 export class Calculation{
     dispatcher:AppDispatch
     currentNum:string
     prevNum:string
     operation:string
+    screen:string
 
 
     constructor(dispatcher:AppDispatch) {
         this.dispatcher = dispatcher
+        this.screen = store.getState().screen.screen
         this.currentNum = ''
         this.prevNum = ''
         this.operation = ''
@@ -41,6 +44,9 @@ export class Calculation{
         if (this.currentNum){
             this.currentNum = this.currentNum.slice(0,-1)
         }
+        if(!isNum(this.screen[this.screen.length - 1])){
+            this.operation = ''
+        }
         this.dispatcher(removeLast())
     }
 
@@ -59,10 +65,12 @@ export class Calculation{
                 if (!this.currentNum){
                     return
                 }
+                
 
-                this.prevNum
+                this.prevNum && (getLastOperation() === '+' )
                     ? result = String( Number(this.currentNum) / 100 * Number(this.prevNum))
-                    : result = String(this.prevNum + +this.currentNum / 100)
+                    : result = String(+this.currentNum / 100)
+                    console.log(result)
                 this.dispatcher(getPercent({percent:result,currentNum:this.currentNum}))
                 this.currentNum = result
                 break
